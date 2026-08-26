@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { socket } from "../socket/socket";
-import type { ChatMessage } from "../types/chat";
+import type { ChatMessage } from "../types/Chat";
 
 function Chat() {
   const [messages, setMessages] = useState<ChatMessage[]>([]);
