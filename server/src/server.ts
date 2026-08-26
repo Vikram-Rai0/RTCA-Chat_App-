@@ -3,7 +3,7 @@ import http from "http";
 import cors from "cors";
 import { Server } from "socket.io";
 
-import { registerChatSocket } from "./chat.socket.js";
+import { registerChatSocket } from "./socket/chat.socket.js";
 
 const app = express();
 
