@@ -12,8 +12,17 @@ export function registerChatSocket(io: Server) {
     socket.on("message", (message: ChatMessage) => {
       console.log("Received message:", message);
 
+      // socket.broadcast.emit("message", message);
       io.emit("message", message);
     });
+
+    socket.on("typing", (username: string) => {
+      socket.broadcast.emit("typing", username);
+    })
+
+    socket.on("stop_typing",()=>{
+      socket.broadcast.emit("stop_typing");
+    })
 
     socket.on("disconnect", () => {
       console.log("Client disconnected:", socket.id);
